@@ -1,0 +1,37 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- income.component.html -->
+<div class="container">
+  <h1>Income Calculator</h1>
+  <form (ngSubmit)="calculateAndSaveIncome(); $event.preventDefault()">
+    <label for="grossIncome">Gross Income:</label>
+    <input type="number" [(ngModel)]="incomeModel.grossIncome" name="grossIncome" min = 0>
+    
+    <label for="federalTax">Federal Tax (%):</label>
+    <input type="number" [(ngModel)]="incomeModel.federalTax" name="federalTax" min = 0>
+    
+    <label for="stateTax">State Tax (%):</label>
+    <input type="number" [(ngModel)]="incomeModel.stateTax" name="stateTax" min = 0>
+    
+    <label for="otherDeductions">Other Deductions:</label>
+    <input type="number" [(ngModel)]="incomeModel.otherDeductions" name="otherDeductions" min = 0>
+    
+    <button type="submit">Calculate Net Income</button>
+  </form>
+  <div *ngIf="netIncome >= 0">
+    <h2>Net Income: {{ netIncome | currency }}</h2>
+  </div>
+</div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
